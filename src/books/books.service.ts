@@ -35,4 +35,10 @@ export class BooksService {
     books[index] = updatedBook;
     return updatedBook;
   }
+
+  deleteBook(id: number) {
+    const bookIndex = books.findIndex((book) => book.id === id);
+    books.splice(bookIndex, 1);
+    return books;
+  }
 }
